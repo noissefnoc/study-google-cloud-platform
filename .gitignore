@@ -1,0 +1,11 @@
+# python virtualenv
+venv
+
+# IDE setting
+.idea
+
+# macOS setting
+.DS_Store
+
+# Environmental setting
+products/set_env.sh
