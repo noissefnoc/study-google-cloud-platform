@@ -22,6 +22,12 @@ Apache Beam をベースにした Dataflow 2.x 系をベースに実施。
 * `pip install google-cloud-dataflow` でライブラリをダウンロード
 
 
+## ToDO
+
+* [ ] 基本的な構文の把握
+* [ ] 単体テストの方法の把握
+* [ ] 複数 Runner での動作方法の把握
+
 
 ## References
 
