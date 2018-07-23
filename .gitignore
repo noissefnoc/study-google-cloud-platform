@@ -9,3 +9,7 @@ venv
 
 # Environmental setting
 products/set_env.sh
+
+# files in output directory
+products/*/out
+!products/*/out/.gitkeep
