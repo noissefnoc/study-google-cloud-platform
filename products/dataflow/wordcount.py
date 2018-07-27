@@ -20,6 +20,8 @@ class WordExtractingDoFn(beam.DoFn):
 
     def __init__(self):
         super(WordExtractingDoFn, self).__init__()
+
+        # set counters
         self.words_counter = Metrics.counter(self.__class__, 'words')
         self.word_lengths_counter = Metrics.counter(self.__class__, 'word_lengths')
         self.word_lengths_dist = Metrics.distribution(
@@ -58,7 +60,7 @@ def run(argv=None):
                         help='Input file to process.')
     parser.add_argument('--output',
                         dest='output',
-                        default='wc',
+                        default='out/wc',
                         help='Output file to write result to.')
     known_args, pipeline_args = parser.parse_known_args(argv)
 
@@ -90,6 +92,7 @@ def run(argv=None):
     result = p.run()
     result.wait_until_finish()
 
+    # print counters
     if (not hasattr(result, 'has_job')
             or result.has_job):
         empty_lines_filter = MetricsFilter().with_name('empty_lines')
