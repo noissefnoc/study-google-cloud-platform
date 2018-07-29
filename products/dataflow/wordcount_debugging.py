@@ -54,7 +54,7 @@ def run(argv=None):
                       help='Input file to process.')
   parser.add_argument('--output',
                       dest='output',
-                      required=True,
+                      default='out/wc-debug',
                       help='Output file to write results to.')
   known_args, pipeline_args = parser.parse_known_args(argv)
   pipeline_options = PipelineOptions(pipeline_args)
@@ -65,8 +65,9 @@ def run(argv=None):
         | CountWords()
         | 'FilterText' >> beam.ParDo(FilterTextFn('Flourish|stomach')))
 
-    assert_that(
-        filtered_words, equal_to([('Flourish', 3), ('stomach', 1)]))
+    # Note: If following two lines comment in, then process exit success after execute them.
+    #assert_that(
+    #    filtered_words, equal_to([('Flourish', 3), ('stomach', 1)]))
 
     def format_result(word_count):
       (word, count) = word_count
