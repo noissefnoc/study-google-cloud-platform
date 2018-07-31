@@ -28,6 +28,7 @@ Apache Beam をベースにした Dataflow 2.x 系をベースに実施。
 * [ ] 単体テストの方法の把握
 * [ ] 複数 Runner での動作方法の把握
 * [ ] デプロイの方法
+* [ ] GCP上での実働
 
 
 ## References
