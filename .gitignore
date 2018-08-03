@@ -11,5 +11,5 @@ venv
 products/set_env.sh
 
 # files in output directory
-products/*/out
-!products/*/out/.gitkeep
+products/*/*/out
+!products/*/*/out/.gitkeep
